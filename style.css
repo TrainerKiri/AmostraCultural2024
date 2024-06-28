@@ -1,4 +1,4 @@
-body {
+body { /* literalmente as alterações do corpo da paginá*/
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@ body {
     background: url(img.jpg) no-repeat;
 }
 
-.container {
+.container { /*a parte em volta do login*/
     background-color: transparent;
     padding: 20px;
     backdrop-filter: blur(20px);
@@ -21,7 +21,7 @@ body {
     width: 100%;
 }
 
-h1 {
+h1 { /* a parte escrita login*/
     color: #fff;
 }
 
@@ -32,7 +32,7 @@ label {
     color: #fff;
 }
 
-input {
+input { /*caixa de por o valor para calculo*/
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -41,7 +41,7 @@ input {
     box-sizing: border-box;
 }
 
-button {
+button { /*alterações e cores do botão normalmente*/
     padding: 10px 20px;
     background-color: #fd0202;
     color: #fff;
@@ -51,35 +51,35 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button:hover { /*cor do botão quando se passa por cima*/
     background-color: #abf9ff;
 }
 
-.resultados {
+.resultados { /*o nome já diz*/
     margin-top: 20px;
     text-align: left;
 }
 
-.resultados p {
+.resultados p { /* o nome já diz sobre e mais o p da escrita*/
     font-size: 1.2em;
     color: #fff;
     margin: 5px 0;
 }
 
-.chart-container {
+.chart-container { /*me parece auto explicativo mas tem relção com a "caixa" do gráfico*/
     position: relative;
     height: 300px;  /* Ajuste a altura conforme necessário */
     width: 300px;   /* Ajuste a largura conforme necessário */
     margin: 0 auto; /* Centraliza o gráfico */
 }
 
-#myChart {
-    height: 100% !important;
-    width: 100% !important;
+#myChart { /*parecido com a questão de cima*/
+    height: 100% ;
+    width: 100% ;
     border-radius: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /*segue a lógica*/
     .container {
         padding: 15px;
     }
@@ -92,8 +92,23 @@ button:hover {
         font-size: 1em;
     }
 
-    .chart-container {
-        height: 200px;  /* Ajuste a altura conforme necessário */
-        width: 200px;   /* Ajuste a largura conforme necessário */
+    .chart-container { /*ajuste do tamanho do gráfico*/
+        height: 200px;  
+        width: 200px;   
     }
 }
+
+footer { /*literal o rodapé como o nome já diz*/
+    flex-shrink: 0; /* Não deixa o footer diminuir */
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+
+
+/*teste do teste do teste do teste de 1871 e mais uma porrada de teste, oi?*/

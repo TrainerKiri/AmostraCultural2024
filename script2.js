@@ -1,5 +1,11 @@
+
+//"No dia mais claro, na noite mais densa, o mal sucumbirá ante a minha presença. Todo aquele que venera o mal há de penar, quando o poder do Lanterna Verde enfrentar
+//SE APAGAR ALGUMA COISA, MEXER EM UM PONTO TUDO EXPLODE E PARA DE FUNCIONAR (É SERIO)
+
 let myChart;
 
+
+// CALCULA O VALOR INSERIDO USANDO OS MULTIPLOS INSERIDOS A BAIXO
 function calcular() {
     var valor = document.getElementById('input-value').value;
     if (valor === '' || isNaN(valor)) {
@@ -59,7 +65,8 @@ function calcular() {
 
         // Aplicar estilo de background branco ao canvas do gráfico
         document.getElementById('myChart').style.backgroundColor = 'white';
-        document.getElementById('myChart').style.borderRadius = '10px'; // Opcional: arredondar as bordas do gráfico
-        document.getElementById('myChart').style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Opcional: adicionar sombra ao gráfico
+        document.getElementById('myChart').style.borderRadius = '10px'; // arredondar as bordas do gráfico
+        document.getElementById('myChart').style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; //adicionar sombra ao gráfico
     }
 }
+
