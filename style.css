@@ -1,27 +1,27 @@
-body { /* literalmente as alterações do corpo da paginá*/
+body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
     background: url(img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.container { /*a parte em volta do login*/
-    background-color: transparent;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  background: url(img.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+    min-height: 100vh;
     padding: 20px;
-    backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255 , .2);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
+    box-sizing: border-box;
+  width: 100%;
 }
 
-h1 { /* a parte escrita login*/
+h1 {
     color: #fff;
 }
 
@@ -32,16 +32,18 @@ label {
     color: #fff;
 }
 
-input { /*caixa de por o valor para calculo*/
+input {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     width: calc(100% - 22px);
     box-sizing: border-box;
+    color: #000;
+    background-color: #fff;
 }
 
-button { /*alterações e cores do botão normalmente*/
+button {
     padding: 10px 20px;
     background-color: #fd0202;
     color: #fff;
@@ -51,55 +53,35 @@ button { /*alterações e cores do botão normalmente*/
     transition: background-color 0.3s ease;
 }
 
-button:hover { /*cor do botão quando se passa por cima*/
+button:hover {
     background-color: #abf9ff;
 }
 
-.resultados { /*o nome já diz*/
+.resultados {
     margin-top: 20px;
     text-align: left;
+    color: #fff;
 }
 
-.resultados p { /* o nome já diz sobre e mais o p da escrita*/
+.resultados p {
     font-size: 1.2em;
-    color: #fff;
     margin: 5px 0;
 }
 
-.chart-container { /*me parece auto explicativo mas tem relção com a "caixa" do gráfico*/
-    position: relative;
-    height: 300px;  /* Ajuste a altura conforme necessário */
-    width: 300px;   /* Ajuste a largura conforme necessário */
-    margin: 0 auto; /* Centraliza o gráfico */
+.chart-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* ajuste conforme necessário */
 }
 
-#myChart { /*parecido com a questão de cima*/
-    height: 100% ;
-    width: 100% ;
+#myChart {
+    height: 300px;
+    width: 100%;
     border-radius: 10px;
 }
 
-@media (max-width: 600px) { /*segue a lógica*/
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    input, button {
-        font-size: 1em;
-    }
-
-    .chart-container { /*ajuste do tamanho do gráfico*/
-        height: 200px;  
-        width: 200px;   
-    }
-}
-
-footer { /*literal o rodapé como o nome já diz*/
-    flex-shrink: 0; /* Não deixa o footer diminuir */
+footer {
+    flex-shrink: 0;
     background-color: transparent;
     padding: 20px;
     text-align: center;
@@ -109,6 +91,7 @@ footer { /*literal o rodapé como o nome já diz*/
     color: #fff;
 }
 
-
-
-/*teste do teste do teste do teste de 1871 e mais uma porrada de teste, oi?*/
+.educacao {
+  color: white;
+  text-align: center;
+}

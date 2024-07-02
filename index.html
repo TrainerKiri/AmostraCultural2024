@@ -17,10 +17,109 @@
             <p id="necessidades">Necessidades (50%): R$ 0,00</p>
             <p id="desejos">Desejos (30%): R$ 0,00</p>
             <p id="poupanca">Poupança/Investimentos (20%): R$ 0,00</p>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
         </div>
     </div>
+
+  <section class="educacao">
+        <h1>Educação Financeira</h1>
+
+        <h2>Receitas</h2>
+        <p><strong>Definição:</strong> São todos os valores que entram no seu orçamento, ou seja, o dinheiro que você ganha. As receitas podem vir de diversas fontes, como salários, rendimentos de investimentos, aluguéis, entre outros.</p>
+        <p><strong>Exemplo:</strong> Se você recebe um salário de R$ 3.000,00 por mês, esse valor é considerado sua receita mensal.</p>
+    
+        <h2>Despesas</h2>
+        <p><strong>Definição:</strong> São todos os valores que saem do seu orçamento, ou seja, o dinheiro que você gasta. As despesas podem ser classificadas em diferentes categorias, como necessidades, desejos e poupança/investimentos.</p>
+        <p><strong>Exemplo:</strong> Gastos com alimentação, moradia, transporte, lazer e poupança são considerados despesas.</p>
+    
+        <h2>Componentes da Calculadora Financeira</h2>
+    
+        <h3>Necessidades (50%)</h3>
+        <p><strong>Definição:</strong> São despesas essenciais para a sua sobrevivência e bem-estar básico. Geralmente, elas representam a maior parte do seu orçamento.</p>
+        <p><strong>Exemplo:</strong> Aluguel, contas de serviços públicos (água, luz, internet), alimentação, transporte, e despesas médicas.</p>
+    
+        <h3>Desejos (30%)</h3>
+        <p><strong>Definição:</strong> São despesas não essenciais que você pode querer, mas não necessariamente precisa. Estas despesas são voltadas para o lazer e conforto.</p>
+        <p><strong>Exemplo:</strong> Jantar em restaurantes, viagens, assinaturas de streaming, roupas e entretenimento.</p>
+    
+        <h3>Poupança/Investimentos (20%)</h3>
+        <p><strong>Definição:</strong> É a parte do seu orçamento destinada a guardar ou investir para o futuro. Isso pode incluir poupança para emergências, investimentos para aposentadoria ou qualquer outro objetivo financeiro de longo prazo.</p>
+        <p><strong>Exemplo:</strong> Depósitos em contas poupança, compra de ações, títulos de renda fixa, e investimentos em fundos.</p>
+    
+        <h2>Como Funciona a Calculadora</h2>
+        <p>A calculadora financeira que você criou divide um valor inserido pelo usuário nas três categorias acima (necessidades, desejos e poupança/investimentos) com base na regra 50/30/20. Aqui está uma explicação detalhada de como isso é feito:</p>
+    
+        <h3>Entrada do Usuário</h3>
+        <p>O usuário insere o valor total de sua receita.</p>
+        <pre><code>&lt;label for="input-value"&gt;Insira o valor total:&lt;/label&gt;
+&lt;input type="number" id="input-value" placeholder="Digite o valor" step="0.01"&gt;
+&lt;button onclick="calcular()"&gt;Calcular&lt;/button&gt;
+&lt;div id="result"&gt;
+    &lt;p id="necessidades"&gt;&lt;/p&gt;
+    &lt;p id="desejos"&gt;&lt;/p&gt;
+    &lt;p id="poupanca"&gt;&lt;/p&gt;
+&lt;/div&gt;
+        </code></pre>
+    
+        <h3>Cálculo dos Valores</h3>
+        <p>O valor inserido é multiplicado pelos percentuais 0,50 (50%), 0,30 (30%) e 0,20 (20%) para determinar os montantes destinados a cada categoria.</p>
+        <pre><code>var valor = document.getElementById('input-value').value;
+var necessidades = valor * 0.50;
+var desejos = valor * 0.30;
+var poupanca = valor * 0.20;
+        </code></pre>
+    
+        <h3>Exibição dos Resultados</h3>
+        <p>Os valores calculados são exibidos na página.</p>
+        <pre><code>document.getElementById('necessidades').textContent = 'Necessidades (50%): R$ ' + necessidades.toFixed(2);
+document.getElementById('desejos').textContent = 'Desejos (30%): R$ ' + desejos.toFixed(2);
+document.getElementById('poupanca').textContent = 'Poupança/Investimentos (20%): R$ ' + poupanca.toFixed(2);
+        </code></pre>
+    
+        <h3>Gráfico de Barras</h3>
+        <p>Os valores são então usados para criar um gráfico de barras que visualiza a distribuição </p>
+        <pre><code>var ctx = document.getElementById('myChart').getContext('2d');
+myChart = new Chart(ctx, {
+    type: 'bar', // Tipo de gráfico de barras
+    data: {
+        labels: ['Necessidades', 'Desejos', 'Poupança/Investimentos'],
+        datasets: [{
+            label: 'Distribuição de Gastos',
+            data: data,
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.label + ': R$ ' + tooltipItem.raw.toFixed(2);
+                    }
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true // Começar o eixo Y no zero
+            }
+        }
+    }
+});
+        </code></pre>
+      <h2>Conclusão</h2>
+        <p>Com esta calculadora financeira, você pode facilmente dividir suas receitas em categorias claras e entender melhor como distribuir seus gastos para atender às suas necessidades, desejos e objetivos de poupança/investimento. Isso ajuda a manter um controle financeiro saudável e tomar decisões mais informadas sobre seu dinheiro.</p>
+    </section>
+  
     <footer id="marca">Criado Pelo Senhor Aluado</footer>
+
     <script src="script2.js"></script>
 </body>
 </html>

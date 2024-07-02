@@ -19,11 +19,11 @@ function realizarLogin() {
     const usuarioValido = usuarios.find(u => u.usuario === username && u.senha === password);
 
     if (usuarioValido) {
-        alert("Login bem-sucedido!");
+        alert("Bem Vindos Senhores");
         // Redireciona para a página desejada após o login
         window.location.href = "index.html";
     } else {
-        alert("Credenciais inválidas. Tente novamente.");
+        alert("Você não deveria estar aqui");
     }
 }
 
